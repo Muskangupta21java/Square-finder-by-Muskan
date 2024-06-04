@@ -1,0 +1,43 @@
+<html>
+<head>
+     <title>Square Finder App by Muskan</title>
+     <style>
+           *{font-size:50px;}
+           body{background-color:lightblue;}
+     </style>
+</head>
+<body>
+<center>
+       <h1>Square Finder App</h1>
+       <form onsubmit="square()">
+       <input type="number" step="any" placeholder="enter number" id="num"></input>
+       <br/> <br/>
+       <input type="submit"value="Find Square"/>
+       </form>
+       <h2 id="msg"></h2>
+      
+       <script>
+               function square()
+               {
+                event.preventDefault();
+                let num=document.getElementById("num");
+                let msg=document.getElementById("msg");
+
+                if(num.value=="")
+                {
+                       alert("please enter the number first");
+                       msg.innerHTML="";
+                       num.focus();
+                       return;
+                }
+
+                let n=parseFloat(num.value);
+                let r=n*n;
+                let ans="square="+r.toFixed(2 );
+                msg.innerHTML=ans;
+                }
+       </script>
+</center>
+</body>
+</html>
+  
